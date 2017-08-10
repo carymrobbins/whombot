@@ -26,7 +26,8 @@ executable whombot
   maven-depends:
                         edu.stanford.nlp:stanford-parser:3.7.0
                         -- Provides the englishPCFG.ser.gz file required for parsing.
-                      , edu.washington.cs.knowitall.stanford-corenlp:stanford-parse-models:1.3.5
+                      -- , edu.washington.cs.knowitall.stanford-corenlp:stanford-parse-models:1.3.5
+                      , edu.washington.cs.knowitall.stanford-corenlp:stanford-postag-models:1.3.5
                         -- Provides twitter english
                       -- , uk.ac.gate:gate-core:8.4.1
 
