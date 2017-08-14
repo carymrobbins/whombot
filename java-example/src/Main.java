@@ -1,13 +1,8 @@
-import edu.stanford.nlp.ling.Word;
-import edu.stanford.nlp.parser.lexparser.*;
-import edu.stanford.nlp.process.PTBTokenizer;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
-import edu.stanford.nlp.trees.EnglishGrammaticalRelations;
-import edu.stanford.nlp.trees.GrammaticalRelation;
-import edu.stanford.nlp.trees.Tree;
 
-import java.io.StringReader;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 public class Main {
 
@@ -20,9 +15,16 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        Properties props = new Properties();
+        try {
+            props.load(new FileInputStream("lib/edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger.props"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         MaxentTagger tagger = new MaxentTagger(
-            "/edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger"
-            //"taggers/english-left3words/english-left3words-distsim.tagger"
+            "lib/edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger",
+            props
         );
 
         String sample = "This is a sample text";

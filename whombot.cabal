@@ -23,12 +23,13 @@ executable whombot
 
   build-depends:        base >= 4.7 && < 5
 
-  maven-depends:
-                        edu.stanford.nlp:stanford-parser:3.7.0
-                        -- Provides the englishPCFG.ser.gz file required for parsing.
+  maven-depends:        edu.stanford.nlp:stanford-parser:3.7.0
+                      --, edu.stanford.nlp:stanford-pos-tagger:3.0.2
+                      -- Provides the englishPCFG.ser.gz file required for parsing.
                       -- , edu.washington.cs.knowitall.stanford-corenlp:stanford-parse-models:1.3.5
+                      -- Can't figure out how to import these resources...
                       , edu.washington.cs.knowitall.stanford-corenlp:stanford-postag-models:1.3.5
-                        -- Provides twitter english
+                      -- Provides twitter english
                       -- , uk.ac.gate:gate-core:8.4.1
 
   default-language:     Haskell2010
